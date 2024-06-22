@@ -15,7 +15,7 @@ const TempAndDetails = ({weather: {
             id:1,
             Icon: FaThermometerEmpty,
             title: "Real feel",
-            value: `${feels_like.toFixed()}°`
+            value: `${feels_like.toFixed()}°${ units === "metric" ? "C" : "F"}`
         },
         {
             id:2,
@@ -49,13 +49,13 @@ const TempAndDetails = ({weather: {
             id:3,
             Icon: MdKeyboardArrowUp,
             title: "High",
-            value: `${temp_max.toFixed()}°`
+            value: `${temp_max.toFixed()}°${ units === "metric" ? "C" : "F"} `
         },
         {
             id:4,
             Icon: MdKeyboardArrowDown,
             title: "Low",
-            value: `${temp_min.toFixed()}°`
+            value: `${temp_min.toFixed()}°${ units === "metric" ? "C" : "F"}`
         },
     ]
 
@@ -66,7 +66,7 @@ const TempAndDetails = ({weather: {
         </div>
         <div className='flex flex-row items-center justify-between py-3'>
             <img src={icon} className='w-20' alt='Weather Icon'></img>
-            <p className='text-5xl'>{`${temp.toFixed()}°`}</p>
+            <p className='text-5xl'>{`${temp.toFixed()}°${ units === "metric" ? "C" : "F"}`}</p>
 
             <div className='flex flex-col space-y-3 items-start'>
 
